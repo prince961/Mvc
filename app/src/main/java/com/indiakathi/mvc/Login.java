@@ -80,6 +80,5 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //test change for github
 
 }

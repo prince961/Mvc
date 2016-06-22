@@ -32,6 +32,7 @@ import java.util.List;
 
 public class FirstScreen extends Activity {
 
+
     Controller aController = null ;
     ListView mListView;
 
@@ -59,16 +60,16 @@ public class FirstScreen extends Activity {
 
         /******************  Create Dummy Products Data
 
-        ModelProducts productObject = null;
-        for(int i=1;i<=4;i++) {
-            int price = 10 + i;
-            // Create product model class object
-            productObject = new ModelProducts("Product " + i, "Description " + i, price);
+         ModelProducts productObject = null;
+         for(int i=1;i<=4;i++) {
+         int price = 10 + i;
+         // Create product model class object
+         productObject = new ModelProducts("Product " + i, "Description " + i, price);
 
-            //store product object to arraylist in controller
-            aController.setProducts(productObject);
+         //store product object to arraylist in controller
+         aController.setProducts(productObject);
 
-        }
+         }
          ***********/
 
         /******************  Products Data Creation End   ***********/
@@ -86,74 +87,74 @@ public class FirstScreen extends Activity {
 
         /******** Dynamically create view elements - Start
 
-        for(int j=0;j< ProductsSize;j++)
-        {
-            // Get probuct data from product data arraylist
-            String pName = aController.getProducts(j).getProductName();
-            int pPrice   = aController.getProducts(j).getProductPrice();
+         for(int j=0;j< ProductsSize;j++)
+         {
+         // Get probuct data from product data arraylist
+         String pName = aController.getProducts(j).getProductName();
+         int pPrice   = aController.getProducts(j).getProductPrice();
 
-            // Create LinearLayout to view elemnts+
-            LinearLayout ll = new LinearLayout(this);
-            ll.setOrientation(LinearLayout.HORIZONTAL);
+         // Create LinearLayout to view elemnts+
+         LinearLayout ll = new LinearLayout(this);
+         ll.setOrientation(LinearLayout.HORIZONTAL);
 
-            TextView product = new TextView(this);
-            product.setText(" "+pName+"    ");
+         TextView product = new TextView(this);
+         product.setText(" "+pName+"    ");
 
-            //Add textView to LinearLayout
-            ll.addView(product);
+         //Add textView to LinearLayout
+         ll.addView(product);
 
-            TextView price = new TextView(this);
-            price.setText("  $"+pPrice+"     ");
+         TextView price = new TextView(this);
+         price.setText("  $"+pPrice+"     ");
 
-            //Add textView to LinearLayout
-            ll.addView(price);
+         //Add textView to LinearLayout
+         ll.addView(price);
 
-            final Button btn = new Button(this);
-            btn.setId(j+1);
-            btn.setText("Add To Cart");
+         final Button btn = new Button(this);
+         btn.setId(j+1);
+         btn.setText("Add To Cart");
 
-            // set the layoutParams on the button
-            btn.setLayoutParams(params);
+         // set the layoutParams on the button
+         btn.setLayoutParams(params);
 
-            final int index = j;
+         final int index = j;
 
-            //Create click listener for dynamically created button
-            btn.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
+         //Create click listener for dynamically created button
+         btn.setOnClickListener(new View.OnClickListener() {
+         public void onClick(View v) {
 
-                    //Clicked button index
-                    Log.i("TAG", "index :" + index);
+         //Clicked button index
+         Log.i("TAG", "index :" + index);
 
-                    // Get product instance for index
-                    ModelProducts tempProductObject = aController.getProducts(index);
+         // Get product instance for index
+         ModelProducts tempProductObject = aController.getProducts(index);
 
-                    //Check Product already exist in Cart or Not
-                    if(!aController.getCart().checkProductInCart(tempProductObject))
-                    {
-                        btn.setText("Added");
+         //Check Product already exist in Cart or Not
+         if(!aController.getCart().checkProductInCart(tempProductObject))
+         {
+         btn.setText("Added");
 
-                        // Product not Exist in cart so add product to
-                        // Cart product arraylist
-                        aController.getCart().setProducts(tempProductObject);
+         // Product not Exist in cart so add product to
+         // Cart product arraylist
+         aController.getCart().setProducts(tempProductObject);
 
-                        Toast.makeText(getApplicationContext(), "Now Cart size: "+aController.getCart().getCartSize(),
-                                Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
-                        // Cart product arraylist contains Product
-                        Toast.makeText(getApplicationContext(), "Product "+(index+1)+" already added in cart.",
-                                Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
+         Toast.makeText(getApplicationContext(), "Now Cart size: "+aController.getCart().getCartSize(),
+         Toast.LENGTH_LONG).show();
+         }
+         else
+         {
+         // Cart product arraylist contains Product
+         Toast.makeText(getApplicationContext(), "Product "+(index+1)+" already added in cart.",
+         Toast.LENGTH_LONG).show();
+         }
+         }
+         });
 
-            //Add button to LinearLayout
-            ll.addView(btn);
+         //Add button to LinearLayout
+         ll.addView(btn);
 
-            //Add LinearLayout to XML layout
-            lm.addView(ll);
-        }  **********/
+         //Add LinearLayout to XML layout
+         lm.addView(ll);
+         }  **********/
 
         /******** Dynamically create view elements - End **********/
 
@@ -232,7 +233,7 @@ public class FirstScreen extends Activity {
 
             List<ModelProducts> countries ;
 
-                countries = jsonParserTry.parse(jObject);
+            countries = jsonParserTry.parse(jObject);
 
 
             aController.addProductList(countries);
@@ -367,4 +368,7 @@ public class FirstScreen extends Activity {
 
 
 }
+
+
+
 

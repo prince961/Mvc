@@ -20,7 +20,7 @@ public class selectBranch extends AppCompatActivity {
     }
 
     public void sector56(View view) {
-        Intent intent = new Intent(this, Categories.class);
+        Intent intent = new Intent(this, AdapterActivityTry.class);
         startActivity(intent);
     }
 }
