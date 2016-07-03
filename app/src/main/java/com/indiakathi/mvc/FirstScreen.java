@@ -248,7 +248,7 @@ public class FirstScreen extends Activity {
             }
 
             String[] from = {"title", "flag","price"};
-            int[] to = {R.id.item_title, R.id.item_image,R.id.item_price};
+            int[] to = {R.id.item_title, R.id.item_image,R.id.item_price1};
 
             return new SimpleAdapter(getBaseContext(),productHMList, R.layout.item_list, from, to);
         }

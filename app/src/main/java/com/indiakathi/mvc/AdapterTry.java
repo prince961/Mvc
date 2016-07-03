@@ -35,6 +35,7 @@ public class AdapterTry extends ArrayAdapter<ModelProducts> {
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.thumbnail = (ImageView) convertView.findViewById(R.id.item_image);
             viewHolder.title = (TextView) convertView.findViewById(R.id.item_title);
+            viewHolder.price = (TextView) convertView.findViewById(R.id.item_price1);
             viewHolder.button = (Button) convertView.findViewById(R.id.addToCart);
             viewHolder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -47,6 +48,7 @@ public class AdapterTry extends ArrayAdapter<ModelProducts> {
         else {
             mainViewHolder = (ViewHolder) convertView.getTag();
             mainViewHolder.title.setText(getItem(position).getProductName());
+            mainViewHolder.price.setText(getItem(position).getProductPrice());
         }
 
         return convertView;
@@ -56,5 +58,6 @@ public class AdapterTry extends ArrayAdapter<ModelProducts> {
         ImageView thumbnail;
         Button button;
         TextView title;
+        TextView price;
     }
 }
