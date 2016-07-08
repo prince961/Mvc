@@ -3,6 +3,7 @@ package com.indiakathi.mvc;
 import android.app.Application;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -12,6 +13,7 @@ public class Controller extends Application {
 
     private ArrayList<ModelProducts> myProducts = new ArrayList<ModelProducts>();
     private  ModelCart myCart = new ModelCart();
+    private ArrayList<HashMap<ModelProducts,Integer>> productWithQuantity = new ArrayList<>();
 
 
     public ModelProducts getProducts(int pPosition) {

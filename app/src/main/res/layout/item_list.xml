@@ -3,13 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#f8f3f3"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal" />
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:id="@+id/item_image"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/mutton_gravy"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,20 +31,41 @@
         android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:id="@+id/item_price"
-        android:text="200"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addToCart"
-        android:text="Add to cart"
-
         />
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/btn_add"
+            android:id="@+id/addImage"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:contextClickable="true"
+            android:contentDescription="i dunno" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="0"
+            android:id="@+id/item_quantity"
+            android:textAlignment="center"/>
 
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/reduceImage"
+            android:src="@mipmap/btn_reduce"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:contextClickable="true" />
 
-
+    </TableRow>
 
 
 

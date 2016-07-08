@@ -7,13 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.indiakathi.mvc.AdapterActivityTry">
+    tools:context="com.indiakathi.mvc.AdapterActivityTry"
+    android:visibility="invisible"
+    android:transitionGroup="true">
 
     <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productListViewA"></ListView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/productListViewA">
+        android:layout_gravity="bottom|end"
+        android:src="@android:drawable/ic_dialog_email"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
-    </ListView>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView5"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/fab1"
+        android:layout_marginTop="156dp" />
 </RelativeLayout>

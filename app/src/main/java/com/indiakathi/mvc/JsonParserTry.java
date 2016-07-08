@@ -75,6 +75,6 @@ public class JsonParserTry {
         }
 
 
-        return new ModelProducts(title,description,price,imageLink);
+        return new ModelProducts(title,description,price,imageLink,0);
     }
 }
